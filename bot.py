@@ -17,9 +17,17 @@ def startMsg(chat_id, first_name):
 	'"*/music* _musician name - song name_"\n\n'
 	'to order some music. 🎶', parse_mode= 'Markdown')
 
+def helpMsg(chat_id, first_name):
+	bot.sendMessage(chat_id, '🤖 Hello, '+ first_name +'!\n\n'
+	'The Commans available for this bot are:'
+	'"*/music* _song name_"  or\n'
+	'"*/music* _musician name - song name_"\n\n'
+	'And I'll do my best to bring your music\n'
+        '🎶🎶🎶🎶🎶🎶🎶🎶', parse_mode= 'Markdown')
+
 def errorMsg(chat_id, error_type):
 	if error_type == 'too_long':
-		bot.sendMessage(chat_id, '‼️ *Oops! Video too long to convert!*\n'
+		bot.sendMessage(chat_id, '‼️ *Shit! The Song is too long..!*\n'
 			'Order something 30 minutes or less.', parse_mode= 'Markdown')
 
 	if error_type == 'spotify_command':
@@ -28,7 +36,7 @@ def errorMsg(chat_id, error_type):
 			'or: "*/music* _musician name - song name_"', parse_mode= 'Markdown')
 
 	if error_type == 'invalid_command':
-		bot.sendMessage(chat_id, '‼️ *Oops! Invalid command!*\n'
+		bot.sendMessage(chat_id, '‼️ *Oops! You typed an invalid command!*\n'
 			'Try: "*/music* _song name_"\n'
 			'or: "*/music* _musician name - song name_"', parse_mode= 'Markdown')
 
@@ -62,7 +70,7 @@ def validMusicInput(userInput, chat_id, chat_type):
 			file_name = title +' - '+str(randint(0,999999))+'.mp3'
 
 			bot.sendMessage(chat_id,'🎵 '+title+'\n'+'🔗 '+link)
-			DownloadingMsg = bot.sendMessage(chat_id,'⬇️ Downloading... '
+			DownloadingMsg = bot.sendMessage(chat_id,'🔻 Downloading🔻 '
 				'\n_(this may take a while.)_', parse_mode= 'Markdown')
 
 			#Download the music
@@ -70,7 +78,7 @@ def validMusicInput(userInput, chat_id, chat_type):
 
 			bot.sendAudio(chat_id,audio=open(file_name,'rb'))
 			bot.deleteMessage((chat_id, DownloadingMsg['message_id']))
-			bot.sendMessage(chat_id, '✅ Sucess!')
+			bot.sendMessage(chat_id, '✅Success✅')
 
 			print ("Sucess!")
 			os.remove(file_name)
@@ -87,8 +95,13 @@ def recebendoMsg(msg):
 	chat_type = msg['chat']['type']
 
 	if chat_type == 'group':
-		if '@TLMusicDownloader_bot' in userInput:
-			userInput = userInput.replace('@TLMusicDownloader_bot', '')
+		if '@yourfavmusicbot' in userInput:
+			userInput = userInput.replace('@yourfavmusicbot', '')
+
+        if userInput.startswith('/start'):
+		#Shows start dialog
+		helpMsg(chat_id, first_name)
+
 
 	if userInput.startswith('/start'):
 		#Shows start dialog
