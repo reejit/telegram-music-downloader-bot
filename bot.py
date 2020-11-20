@@ -98,11 +98,6 @@ def recebendoMsg(msg):
 		if '@yourfavmusicbot' in userInput:
 			userInput = userInput.replace('@yourfavmusicbot', '')
 
-        if userInput.startswith('/start'):
-		#Shows start dialog
-		helpMsg(chat_id, first_name)
-
-
 	if userInput.startswith('/start'):
 		#Shows start dialog
 		startMsg(chat_id, first_name)
