@@ -1,6 +1,5 @@
 youtube-search-python
 youtube-dl
 telepotpro
-python-telegram-bot
 requests
 randint
