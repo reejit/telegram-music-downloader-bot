@@ -7,6 +7,9 @@ Click <a href="https://t.me/TLMusicDownloader_bot">@TLMusicDownloader_bot</a> to
 
 ## Install dependencies
 
+
+https://heroku.com/deploy
+
 - Install telepotpro framework
 
         pip3 install telepotpro
