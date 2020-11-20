@@ -1,3 +1,9 @@
 youtube-search-python
 youtube-dl
 telepotpro
+youtubesearchpython
+multiprocessing
+random
+json
+sys
+os
