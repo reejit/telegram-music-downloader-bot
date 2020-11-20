@@ -22,7 +22,7 @@ def helpMsg(chat_id, first_name):
 	'The Commans available for this bot are:'
 	'"*/music* _song name_"  or\n'
 	'"*/music* _musician name - song name_"\n\n'
-	'"And I'll do my best to bring your music\n"'
+	'"And I'll do my best to bring your music"\n'
         '🎶🎶🎶🎶🎶🎶🎶🎶', parse_mode= 'Markdown')
 
 def errorMsg(chat_id, error_type):
