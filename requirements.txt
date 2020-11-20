@@ -1,7 +1,6 @@
 youtube-search-python
 youtube-dl
 telepotpro
-random
 json
 sys
 os
