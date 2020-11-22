@@ -29,7 +29,7 @@ def errorMsg(chat_id, error_type):
 
 	if error_type == 'invalid_command':
 		bot.sendMessage(chat_id, '‼️ *I did not understand 🤔! *\n'
-			'My commands are:'
+			'My commands are:\n'
                         ' */music* _song name_\n'
 			'or: */music* _musician name - song name_', parse_mode= 'Markdown')
 
