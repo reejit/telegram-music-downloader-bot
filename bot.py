@@ -71,7 +71,7 @@ def validMusicInput(userInput, chat_id, chat_type):
 
 			bot.sendAudio(chat_id,audio=open(file_name,'rb'))
 			bot.deleteMessage((chat_id, DownloadingMsg['message_id']))
-			bot.sendMessage(chat_id, '✅Successfully Uploaded ✅')
+			bot.sendMessage(chat_id, '✅Successfully Uploaded✅')
 
 			print ("Sucess!")
 			os.remove(file_name)
