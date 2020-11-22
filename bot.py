@@ -31,7 +31,7 @@ def errorMsg(chat_id, error_type):
 		bot.sendMessage(chat_id, '‼️ *I did not understand 🤔! *\n'
 			'My commands are:\n'
                         ' */music* _song name_\n'
-			'or: */music* _musician name - song name_', parse_mode= 'Markdown')
+			'*/music* _musician name song name_', parse_mode= 'Markdown')
 
 def downloadMusic(file_name, link):
 	ydl_opts = {
