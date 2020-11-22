@@ -30,7 +30,7 @@ def errorMsg(chat_id, error_type):
 	if error_type == 'invalid_command':
 		bot.sendMessage(chat_id, '‼️ *I did not understand 🤔! *\n'
 			'My commands are:\n'
-                        ' */music* _song name_\n'
+                        '*/music* _song name_\n'
 			'*/music* _musician name song name_', parse_mode= 'Markdown')
 
 def downloadMusic(file_name, link):
