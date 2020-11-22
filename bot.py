@@ -17,7 +17,7 @@ def startMsg(chat_id, first_name):
 	'"*/music* _song name_"  or\n'
 	'"*/music* _musician name - song name_"\n\n'
 	'"And I will try my best to get your music"\n'
-        '🎶🎶🎶🎶🎶🎶🎶' parse_mode= 'Markdown')
+        '🎶🎶🎶🎶🎶🎶🎶', parse_mode= 'Markdown')
 
 def errorMsg(chat_id, error_type):
 	if error_type == 'too_long':
