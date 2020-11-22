@@ -6,34 +6,31 @@ import telepotpro
 from random import randint
 from multiprocessing import Process
 from youtubesearchpython import SearchVideos
-from telegram import *
-from telegram.ext import *
 
-bot = telepotpro.Bot("1461874967:AAEGbATjZZU-AaCxP_5pms9VPS0NFl6C-qk")
+
+bot = telepotpro.Bot("API_TOKEN")
 
 def startMsg(chat_id, first_name):
 	bot.sendMessage(chat_id, '🤖 Hello, '+ first_name +'!\n\n'
-	"📩 Send me:\n\n"
-	"*/music* _song name_ or \n"
-	"*/music* _musician name - song name_ \n\n"
-	"to order some music. 🎶", parse_mode= 'Markdown')
-
-def helpMsg(update, context):
-    context.bot.send_message(chat_id=update.message.chat_id,
-                             text="Hey There \n\n"
-                                       "The commands for this bot are \n"
-	                               "*/music* _song name_ or \n"  
-                         	       "*/music* _musician name - song name_\n"
-                                       "And I will do my best to bring your music\n"
-                                       "🎶🎶🎶🎶🎶🎶🎶🎶", parse_mode= 'Markdown')
+	'I am a Music Downloader bot \n'
+        '"*My*  _commands available are_"\n'
+	'"*/music* _song name_"  or\n'
+	'"*/music* _musician name - song name_"\n\n'
+	'"And I will try my best to get your music"\n'
+        '🎶🎶🎶🎶🎶🎶🎶' parse_mode= 'Markdown')
 
 def errorMsg(chat_id, error_type):
-
-        if error_type == 'too_long':
-                 bot.sendMessage(chat_id, '‼️ *Shit! The Song is too long..!*\n'
+	if error_type == 'too_long':
+		bot.sendMessage(chat_id, '‼️ *Oops! Video too long to convert!*\n'
 			'Order something 30 minutes or less.', parse_mode= 'Markdown')
-        else:
-                bot.sendMessage(chat_id, '‼️ *Oops! You typed an invalid command!*\n'
+
+	if error_type == 'spotify_command':
+		bot.sendMessage(chat_id, "‼️ *Oops! The bot doesn't support Spotify links!*\n"
+			'Try: "*/music* _song name_"\n'
+			'or: "*/music* _musician name - song name_"', parse_mode= 'Markdown')
+
+	if error_type == 'invalid_command':
+		bot.sendMessage(chat_id, '‼️ *Oops! Invalid command!*\n'
 			'Try: "*/music* _song name_"\n'
 			'or: "*/music* _musician name - song name_"', parse_mode= 'Markdown')
 
