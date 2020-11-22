@@ -25,7 +25,7 @@ def helpMsg(update, context):
 	                               "*/music* _song name_ or \n"  
                          	       "*/music* _musician name - song name_\n"
                                        "And I will do my best to bring your music\n"
-                                       "🎶🎶🎶🎶🎶🎶🎶🎶', parse_mode= 'Markdown')
+                                       "🎶🎶🎶🎶🎶🎶🎶🎶", parse_mode= 'Markdown')
 
 def errorMsg(chat_id, error_type):
 	if error_type == 'too_long':
