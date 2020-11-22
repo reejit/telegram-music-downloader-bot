@@ -23,7 +23,7 @@ def helpMsg(update, context):
                              text="Hey There \n\n"
                                        "The commands for this bot are \n"
                                        "The Commans available for this bot are:'
-	                               "*/music* _song name_"  or\n'
+	                               "*/music* _song name_"  or\n"
                          	       "*/music* _musician name - song name_\n"
                                        "And I will do my best to bring your music\n"
                                        "🎶🎶🎶🎶🎶🎶🎶🎶', parse_mode= 'Markdown')
@@ -124,6 +124,11 @@ def main(msg):
 	main_process.start()
     dp.add_handler(CommandHandler('start', start))
     dp.add_handler(CommandHandler('help', help))
+    dp.add_handler(CommandHandler('error', error))
+    dp.add_handler(CommandHandler('downloadMusic', downloadMusic))
+    dp.add_handler(CommandHandler('validMusicInput', validMusicInput))
+   dp.add_handler(CommandHandler('recebendoMsg', recebendoMsg))
+
 
 
 bot.message_loop(main, run_forever=True)
