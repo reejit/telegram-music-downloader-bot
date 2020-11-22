@@ -28,6 +28,7 @@ def helpMsg(update, context):
                                        "🎶🎶🎶🎶🎶🎶🎶🎶", parse_mode= 'Markdown')
 
 def errorMsg(chat_id, error_type):
+
 	if error_type == 'too_long':
 		bot.sendMessage(chat_id, '‼️ *Shit! The Song is too long..!*\n'
 			'Order something 30 minutes or less.', parse_mode= 'Markdown')
