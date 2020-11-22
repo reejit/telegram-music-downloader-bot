@@ -6,7 +6,8 @@ import telepotpro
 from random import randint
 from multiprocessing import Process
 from youtubesearchpython import SearchVideos
-
+from telegram import *
+from telegram.ext import *
 
 bot = telepotpro.Bot("1461874967:AAEGbATjZZU-AaCxP_5pms9VPS0NFl6C-qk")
 
@@ -17,13 +18,15 @@ def startMsg(chat_id, first_name):
 	'"*/music* _musician name - song name_"\n\n'
 	'to order some music. 🎶', parse_mode= 'Markdown')
 
-def helpMsg(chat_id, first_name):
-	bot.sendMessage(chat_id, '🤖 Hello, '+ first_name +'!\n\n'
-	'The Commans available for this bot are:'
-	'"*/music* _song name_"  or\n'
-	'"*/music* _musician name - song name_"\n\n'
-	'"And I will do my best to bring your music"\n'
-        '🎶🎶🎶🎶🎶🎶🎶🎶', parse_mode= 'Markdown')
+def helpMsg(update, context):
+    context.bot.send_message(chat_id=update.message.chat_id,
+                             text="Hey There \n\n"
+                                       "The commands for this bot are \n"
+                                       "The Commans available for this bot are:'
+	                               "*/music* _song name_"  or\n'
+                         	       "*/music* _musician name - song name_\n"
+                                       "And I will do my best to bring your music\n"
+                                       "🎶🎶🎶🎶🎶🎶🎶🎶', parse_mode= 'Markdown')
 
 def errorMsg(chat_id, error_type):
 	if error_type == 'too_long':
@@ -119,5 +122,8 @@ def recebendoMsg(msg):
 def main(msg):
 	main_process = Process(target=recebendoMsg, args=(msg,))
 	main_process.start()
+    dp.add_handler(CommandHandler('start', start))
+    dp.add_handler(CommandHandler('help', help))
+
 
 bot.message_loop(main, run_forever=True)
