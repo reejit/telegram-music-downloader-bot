@@ -30,8 +30,7 @@ def helpMsg(update, context):
 def errorMsg(chat_id, error_type):
 
         if error_type == 'too_long':
-try:
-		bot.sendMessage(chat_id, '‼️ *Shit! The Song is too long..!*\n'
+                 bot.sendMessage(chat_id, '‼️ *Shit! The Song is too long..!*\n'
 			'Order something 30 minutes or less.', parse_mode= 'Markdown')
         else:
                 bot.sendMessage(chat_id, '‼️ *Oops! You typed an invalid command!*\n'
