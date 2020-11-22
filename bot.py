@@ -13,10 +13,10 @@ bot = telepotpro.Bot("1461874967:AAEGbATjZZU-AaCxP_5pms9VPS0NFl6C-qk")
 
 def startMsg(chat_id, first_name):
 	bot.sendMessage(chat_id, '🤖 Hello, '+ first_name +'!\n\n'
-	'📩 Send me:\n\n'
-	'"*/music* _song name_"  or\n'
-	'"*/music* _musician name - song name_"\n\n'
-	'to order some music. 🎶', parse_mode= 'Markdown')
+	"📩 Send me:\n\n"
+	"*/music* _song name_ or \n"
+	"*/music* _musician name - song name_ \n\n"
+	"to order some music. 🎶", parse_mode= 'Markdown')
 
 def helpMsg(update, context):
     context.bot.send_message(chat_id=update.message.chat_id,
