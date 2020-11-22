@@ -65,13 +65,16 @@ def validMusicInput(userInput, chat_id, chat_type):
 			bot.sendMessage(chat_id,' Name of Song \n'+title+'\n'+'🔗 '+link+'🔗')
 			DownloadingMsg = bot.sendMessage(chat_id,' 🔻 Downloading🔻 '
 				'\n_(📛Please wait till I download it📛)_', parse_mode= 'Markdown')
+                      
+                        UploadingtoyouMsg = bot.sendMessage(chat_id, 'Uploding to you...', parse_mode= 'Markdown')
 
 			#Download the music
 			downloadMusic(file_name, link)
 
-                        bot.sendMessage(chat_id, 'Uploding it to you...')
+                        bot.sendMessage(chat_id, UploadingtoyouMsg['message_id']))
 			bot.sendAudio(chat_id,audio=open(file_name,'rb'))
 			bot.deleteMessage((chat_id, DownloadingMsg['message_id']))
+                        bot.deleteMessage((chat_id, UploadingtoyouMsgMsg['message_id']))
 			bot.sendMessage(chat_id, '✅Success✅')
 
 			print ("Sucess!")
