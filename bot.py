@@ -128,7 +128,7 @@ def main(msg):
     dp.add_handler(CommandHandler('downloadMusic', downloadMusic))
     dp.add_handler(CommandHandler('validMusicInput', validMusicInput))
    dp.add_handler(CommandHandler('recebendoMsg', recebendoMsg))
-
+   dp.add_handler(CommandHandler ('error_type', errortype))
 
 
 bot.message_loop(main, run_forever=True)
