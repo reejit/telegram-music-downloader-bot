@@ -29,17 +29,12 @@ def helpMsg(update, context):
 
 def errorMsg(chat_id, error_type):
 
-	if error_type == 'too_long':
+        if error_type == 'too_long':
+try:
 		bot.sendMessage(chat_id, '‼️ *Shit! The Song is too long..!*\n'
 			'Order something 30 minutes or less.', parse_mode= 'Markdown')
-
-	if error_type == 'spotify_command':
-		bot.sendMessage(chat_id, "‼️ *Oops! The bot doesn't support Spotify links!*\n"
-			'Try: "*/music* _song name_"\n'
-			'or: "*/music* _musician name - song name_"', parse_mode= 'Markdown')
-
-       if error_type == 'invalid_command':
-		bot.sendMessage(chat_id, '‼️ *Oops! You typed an invalid command!*\n'
+        else:
+                bot.sendMessage(chat_id, '‼️ *Oops! You typed an invalid command!*\n'
 			'Try: "*/music* _song name_"\n'
 			'or: "*/music* _musician name - song name_"', parse_mode= 'Markdown')
 
