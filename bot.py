@@ -62,7 +62,7 @@ def validMusicInput(userInput, chat_id, chat_type):
 			link = resultados['search_result'][0]['link']
 			file_name = title +' - '+str(randint(0,999999))+'.mp3'
 
-			bot.sendMessage(chat_id,' Name of Song \n'+title+'\n'+'🔗 '+link+'🔗)
+			bot.sendMessage(chat_id,' Name of Song \n'+title+'\n'+'🔗 '+link+'🔗')
 			DownloadingMsg = bot.sendMessage(chat_id,' 🔻 Downloading🔻 '
 				'\n_(📛Please wait till I download it📛)_', parse_mode= 'Markdown')
 
