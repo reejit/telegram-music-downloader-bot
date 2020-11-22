@@ -35,11 +35,6 @@ def errorMsg(chat_id, error_type):
 			'Try: "*/music* _song name_"\n'
 			'or: "*/music* _musician name - song name_"', parse_mode= 'Markdown')
 
-	if error_type == 'invalid_command':
-		bot.sendMessage(chat_id, '‼️ *Oops! You typed an invalid command!*\n'
-			'Try: "*/music* _song name_"\n'
-			'or: "*/music* _musician name - song name_"', parse_mode= 'Markdown')
-
 def downloadMusic(file_name, link):
 	ydl_opts = {
 		'outtmpl': './'+file_name,
