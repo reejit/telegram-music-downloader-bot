@@ -22,7 +22,7 @@ def helpMsg(update, context):
     context.bot.send_message(chat_id=update.message.chat_id,
                              text="Hey There \n\n"
                                        "The commands for this bot are \n"
-	                               "*/music* _song name_"  or\n"
+	                               "*/music* _song name_ or \n"  
                          	       "*/music* _musician name - song name_\n"
                                        "And I will do my best to bring your music\n"
                                        "🎶🎶🎶🎶🎶🎶🎶🎶', parse_mode= 'Markdown')
