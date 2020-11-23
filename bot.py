@@ -95,7 +95,7 @@ def recebendoMsg(msg):
 		#Shows start dialog
 		startMsg(chat_id, first_name)
 
-	elif userInput.startswith('/music') and userInput[6:]!='':
+	elif userInput.startswith('/find') and userInput[6:]!='':
 		if 'open.spotify.com' in userInput[6:]:
 			errorMsg(chat_id, 'spotify_command')
 
