@@ -50,7 +50,7 @@ def downloadMusic(file_name, link):
 
 def validMusicInput(userInput, chat_id, chat_type):
 		#Search music on youtube
-		search = SearchVideos(userInput[5:], offset = 1, mode = "json", max_results = 1)
+		search = SearchVideos(userInput[6:], offset = 1, mode = "json", max_results = 1)
 		resultados = json.loads(search.result())
 		
 		#Get video duration
@@ -96,7 +96,7 @@ def recebendoMsg(msg):
 		startMsg(chat_id, first_name)
 
 	elif userInput.startswith('/find) and userInput[5:]!='':
-		if 'open.spotify.com' in userInput[5:]:
+		if 'open.spotify.com' in userInput[6:]:
 			errorMsg(chat_id, 'spotify_command')
 
 		else:
