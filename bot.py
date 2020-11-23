@@ -14,8 +14,8 @@ def startMsg(chat_id, first_name):
 	bot.sendMessage(chat_id, 'Hey, 💓'+ first_name +'💓\n'
 	'I am a Music Downloader bot\n'
         '*My* _commands available are_\n'
-	'*/music* _song name_ or\n'
-	'*/music* _musician name - song name_\n\n'
+	'*/find* _song name_ or\n'
+	'*/find* _musician name - song name_\n\n'
 	'And I will try my best to get your music \n'
         '🎶🎶🎶🎶🎶🎶🎶', parse_mode= 'Markdown')
 
@@ -30,8 +30,8 @@ def errorMsg(chat_id, error_type):
 	if error_type == 'invalid_command':
 		bot.sendMessage(chat_id, '‼️ *I did not understand 🤔! *\n'
 			'My commands are:\n'
-                        '*/music* _song name_\n'
-			'*/music* _musician name song name_', parse_mode= 'Markdown')
+                        '*find* _song name_\n'
+			'*/find* _musician name song name_', parse_mode= 'Markdown')
 
 def downloadMusic(file_name, link):
 	ydl_opts = {
@@ -62,7 +62,7 @@ def validMusicInput(userInput, chat_id, chat_type):
 			link = resultados['search_result'][0]['link']
 			file_name = title +' - '+str(randint(0,999999))+'.mp3'
 
-			bot.sendMessage(chat_id,' Name of Song\n'+'⏬⏬⏬⏬⏬⏬⏬⏬\n'+title+'\n'+'🔗 '+link+' 🔗')
+			bot.sendMessage(chat_id,' Name of Song\n'+'⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬\n'+title+'\n'+'🔗 '+link+' 🔗')
 			DownloadingMsg = bot.sendMessage(chat_id,' 🔻 Downloading🔻 '
 				'\n_📛Please wait till I download it📛_', parse_mode= 'Markdown')
                       
@@ -95,7 +95,7 @@ def recebendoMsg(msg):
 		#Shows start dialog
 		startMsg(chat_id, first_name)
 
-	elif userInput.startswith('/find') and userInput[6:]!='':
+	elif userInput.startswith('/find) and userInput[6:]!='':
 		if 'open.spotify.com' in userInput[6:]:
 			errorMsg(chat_id, 'spotify_command')
 
