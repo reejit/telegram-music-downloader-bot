@@ -69,6 +69,7 @@ def validMusicInput(userInput, chat_id, chat_type):
 			#Download the music
 			downloadMusic(file_name, link)
 
+                        bot.sendMessage(chat_id, 'Test')
 			bot.sendAudio(chat_id,audio=open(file_name,'rb'))
 			bot.deleteMessage((chat_id, DownloadingMsg['message_id']))
 			bot.sendMessage(chat_id, '✅Successfully Uploaded✅')
